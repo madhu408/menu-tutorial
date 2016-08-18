@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+<style>
+#topbar {background:#555; height:70px;}
+#menu1btn {float:left; margin:15px 0px 0px 20px; padding:10px;}
+#menu1 {
+position:absolute;
+ left:20px;
+ width:140px; 
+ height:auto; background:#333;
+ z-index:10;
+ padding:0px 2px 2px 2px;
+ transform-origin:50% 0%;
+  transform:perspective(800px) rotateX(0deg);
+   transition:transform .3s linear 0s;
+ 
+ }
+#menu1 > a{
+display:block;
+text-decoration:none;
+color:#fff;
+padding:12px 0px 12px 12px;
+transition:background 0.2s linear 0s, color 0.2s linear 0s;
+
+}
+
+
+</style>
+<script type="text/javascript">
+function toggleMenu(menu){
+ var menu = document.getElementById(menu);
+  if(menu.dataset.opened == "no"){
+   menu.style.transform = "perspective(800px) rotateX(0deg)";
+   menu.dataset.opened == "yes";
+   }else{
+   menu.style.transform = "perspective(800px) rotateX(90deg)";
+   menu.dataset.opened == "no";
+   }
+
+
+}
+ </script>
+
+</head>
+<body>
+<div id="topbar">
+ <button id="menu1btn" onclick="toggleMenu('menu1')">Menu</button>
+</div>
+
+<nav id="menu1" class="folding_menu" data-opened="no">
+<a href="#">Section A</a>
+<a href="#">Section A</a>
+<a href="#">Section A</a>
+<a href="#">Section A</a>
+<a href="#">Section A</a>
+
+
+</body>
+
+</html>
